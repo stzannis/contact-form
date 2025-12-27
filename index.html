@@ -66,19 +66,60 @@
         }
         .contact-form button:hover { background-color: #005a9e; }
         .contact-form button:disabled { background-color: #ccc; }
+
+        /* CSS για τα Social Share Buttons */
+        .share-section {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+        .share-section p {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .share-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+        .share-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+        .share-btn:hover {
+            transform: translateY(-3px);
+            opacity: 0.9;
+        }
+        .fb { background-color: #3b5998; }
+        .tw { background-color: #000000; } 
+        .li { background-color: #0077b5; }
+        .mail { background-color: #ea4335; } /* Gmail/Email Red */
     </style>
 </head>
 <body>
 
 <div class="contact-form">
     <div class="info" style="border-bottom: none; margin-bottom: 0; padding-bottom: 5px;">
-    <strong>Σχεδίαση & Επεξεργασία Δεδομένων:</strong>
-</div>
+        <strong>Σχεδίαση & Επεξεργασία Δεδομένων:</strong>
+    </div>
 
-<div class="info">
-    Τζαννής Στυλιανός<br>
-    Εργαστήριο Τηλεπισκόπησης, Πανεπιστήμιο Αιγαίου
-</div>
+    <div class="info">
+        Τζαννής Στυλιανός<br>
+        Εργαστήριο Τηλεπισκόπησης, Πανεπιστήμιο Αιγαίου
+    </div>
 
     <div id="form-content">
         <h2>Επικοινωνία</h2>
@@ -99,6 +140,16 @@
         <h3 style="color: #28a745;">✓ Ευχαριστούμε!</h3>
         <p>Το μήνυμά σας στάλθηκε με επιτυχία.</p>
     </div>
+
+    <div class="share-section">
+        <p>Κοινοποίηση</p>
+        <div class="share-links">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://arcg.is/0b4LOf0" target="_blank" class="share-btn fb" title="Facebook">f</a>
+            <a href="https://twitter.com/intent/tweet?url=https://arcg.is/0b4LOf0" target="_blank" class="share-btn tw" title="X (Twitter)">𝕏</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://arcg.is/0b4LOf0" target="_blank" class="share-btn li" title="LinkedIn">in</a>
+            <a href="mailto:?subject=Chios Fires Map&body=Δείτε το διαδραστικό χάρτη εδώ: https://arcg.is/0b4LOf0" class="share-btn mail" title="Email">✉</a>
+        </div>
+    </div>
 </div>
 
 <script>
@@ -109,7 +160,6 @@
 
     form.addEventListener("submit", function(e) {
         e.preventDefault();
-        
         btn.innerHTML = "Αποστολή...";
         btn.disabled = true;
 
@@ -127,21 +177,3 @@
         .then(response => {
             if (response.ok) {
                 formContent.style.display = 'none';
-                successMsg.style.display = 'block';
-            } else {
-                throw new Error('Σφάλμα κατά την αποστολή');
-            }
-        })
-        .catch(error => {
-            console.error("Error:", error);
-            alert("Υπήρξε κάποιο πρόβλημα. Δοκιμάστε ξανά σε λίγο.");
-            btn.innerHTML = "Αποστολή";
-            btn.disabled = false;
-        });
-    });
-</script>
-
-</body>
-</html>
-
-
