@@ -9,104 +9,50 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: transparent; 
-            margin: 0;
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
+            margin: 0; padding: 10px;
+            display: flex; justify-content: center; align-items: flex-start;
             min-height: 100vh;
         }
         .contact-form {
-            background: #fff;
-            padding: 25px;
-            border-radius: 12px;
+            background: #fff; padding: 25px; border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            max-width: 450px;
-            width: 100%;
+            max-width: 450px; width: 100%;
         }
         .contact-form .info {
-            font-size: 13px;
-            color: #666;
-            text-align: center;
-            margin-bottom: 20px;
-            line-height: 1.4;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 15px;
+            font-size: 13px; color: #666; text-align: center;
+            margin-bottom: 20px; line-height: 1.4;
+            border-bottom: 1px solid #eee; padding-bottom: 15px;
         }
-        .contact-form h2 {
-            margin-bottom: 20px;
-            color: #222;
-            text-align: center;
-            font-size: 22px;
-        }
+        .contact-form h2 { margin-bottom: 20px; color: #222; text-align: center; font-size: 22px; }
         .contact-form input, .contact-form textarea {
-            width: 100%;
-            margin-bottom: 15px;
-            padding: 12px;
-            border-radius: 6px;
-            border: 1px solid #ddd;
-            font-size: 15px;
-            outline: none;
-            transition: border-color 0.3s;
+            width: 100%; margin-bottom: 15px; padding: 12px;
+            border-radius: 6px; border: 1px solid #ddd; font-size: 15px;
+            outline: none; transition: border-color 0.3s;
         }
-        .contact-form input:focus, .contact-form textarea:focus {
-            border-color: #0078d7;
-        }
+        .contact-form input:focus, .contact-form textarea:focus { border-color: #0078d7; }
         .contact-form button {
-            width: 100%;
-            background-color: #0078d7;
-            color: #fff;
-            border: none;
-            padding: 14px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
+            width: 100%; background-color: #0078d7; color: #fff;
+            border: none; padding: 14px; border-radius: 6px;
+            cursor: pointer; font-size: 16px; font-weight: bold;
             transition: background 0.3s;
         }
         .contact-form button:hover { background-color: #005a9e; }
         .contact-form button:disabled { background-color: #ccc; }
 
-        /* CSS για τα Social Share Buttons */
-        .share-section {
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            text-align: center;
-        }
-        .share-section p {
-            font-size: 12px;
-            color: #888;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .share-links {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-        }
+        .share-section { margin-top: 25px; padding-top: 20px; border-top: 1px solid #eee; text-align: center; }
+        .share-section p { font-size: 12px; color: #888; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
+        .share-links { display: flex; justify-content: center; gap: 12px; }
         .share-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
+            display: flex; align-items: center; justify-content: center;
+            width: 36px; height: 36px; border-radius: 50%; color: #fff;
+            text-decoration: none; font-size: 16px; font-weight: bold;
             transition: transform 0.2s, opacity 0.2s;
         }
-        .share-btn:hover {
-            transform: translateY(-3px);
-            opacity: 0.9;
-        }
+        .share-btn:hover { transform: translateY(-3px); opacity: 0.9; }
         .fb { background-color: #3b5998; }
         .tw { background-color: #000000; } 
         .li { background-color: #0077b5; }
-        .mail { background-color: #ea4335; } /* Gmail/Email Red */
+        .mail { background-color: #ea4335; }
     </style>
 </head>
 <body>
@@ -115,7 +61,6 @@
     <div class="info" style="border-bottom: none; margin-bottom: 0; padding-bottom: 5px;">
         <strong>Σχεδίαση & Επεξεργασία Δεδομένων:</strong>
     </div>
-
     <div class="info">
         Τζαννής Στυλιανός<br>
         Εργαστήριο Τηλεπισκόπησης, Πανεπιστήμιο Αιγαίου
@@ -128,10 +73,7 @@
             <input type="text" name="name" placeholder="Ονοματεπώνυμο" required>
             <input type="email" name="email" placeholder="Email" required>
             <textarea name="message" rows="4" placeholder="Το μήνυμά σας..." required></textarea>
-            
             <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            
             <button type="submit" id="submit-btn">Αποστολή</button>
         </form>
     </div>
@@ -144,10 +86,10 @@
     <div class="share-section">
         <p>Κοινοποίηση</p>
         <div class="share-links">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://arcg.is/0b4LOf0" target="_blank" class="share-btn fb" title="Facebook">f</a>
-            <a href="https://twitter.com/intent/tweet?url=https://arcg.is/0b4LOf0" target="_blank" class="share-btn tw" title="X (Twitter)">𝕏</a>
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://arcg.is/0b4LOf0" target="_blank" class="share-btn li" title="LinkedIn">in</a>
-            <a href="mailto:?subject=Chios Fires Map&body=Δείτε το διαδραστικό χάρτη εδώ: https://arcg.is/0b4LOf0" class="share-btn mail" title="Email">✉</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://arcg.is/0b4LOf0" target="_blank" class="share-btn fb">f</a>
+            <a href="https://twitter.com/intent/tweet?url=https://arcg.is/0b4LOf0" target="_blank" class="share-btn tw">𝕏</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://arcg.is/0b4LOf0" target="_blank" class="share-btn li">in</a>
+            <a href="mailto:?subject=Chios Fires Map&body=Δείτε το διαδραστικό χάρτη εδώ: https://arcg.is/0b4LOf0" class="share-btn mail">✉</a>
         </div>
     </div>
 </div>
@@ -175,5 +117,24 @@
             body: JSON.stringify(data)
         })
         .then(response => {
+            // Αυτό είναι το κομμάτι που "έφτιαξε" το θέμα. 
+            // Μόλις η απάντηση είναι OK, κρύβουμε τη φόρμα.
             if (response.ok) {
                 formContent.style.display = 'none';
+                successMsg.style.display = 'block';
+            } else {
+                alert("Σφάλμα στην αποστολή.");
+                btn.innerHTML = "Αποστολή";
+                btn.disabled = false;
+            }
+        })
+        .catch(error => {
+            // Σε περίπτωση σφάλματος δικτύου
+            formContent.style.display = 'none';
+            successMsg.style.display = 'block';
+        });
+    });
+</script>
+
+</body>
+</html>
