@@ -71,10 +71,6 @@
         .contact-form button:hover {
             background-color: #005a9e;
         }
-        .contact-form button:disabled {
-            background-color: #ccc;
-            cursor: not-allowed;
-        }
     </style>
 </head>
 <body>
@@ -88,7 +84,8 @@
 
     <div id="form-content">
         <h2>Επικοινωνία</h2>
-        <form id="my-form" action="https://formsubmit.co/ajax/pafere" method="POST">
+        
+        <form action="https://formsubmit.co/pafere" method="POST">
             
             <input type="text" name="_honey" style="display:none">
             
@@ -97,60 +94,14 @@
             <textarea name="message" rows="4" placeholder="Το μήνυμά σας..." required></textarea>
             
             <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
             
-            <button type="submit" id="submit-btn">Αποστολή</button>
-        </form>
-    </div>
+            <input type="hidden" name="_next" value="LINK_ΣΕΛΙΔΑΣ_ΣΤΟ_GITHUB">
 
-    <div id="success-msg" style="display:none; text-align:center; padding: 20px;">
-        <h3 style="color: #28a745;">✓ Ευχαριστούμε!</h3>
-        <p>Το μήνυμά σας στάλθηκε με επιτυχία.</p>
+            <button type="submit">Αποστολή</button>
+        </form>
     </div>
 </div>
 
-<script>
-    const form = document.getElementById('my-form');
-    const formContent = document.getElementById('form-content');
-    const successMsg = document.getElementById('success-msg');
-    const btn = document.getElementById('submit-btn');
-
-    form.addEventListener("submit", function(e) {
-        e.preventDefault();
-        
-        btn.innerHTML = "Αποστολή...";
-        btn.disabled = true;
-
-        // Συλλογή δεδομένων
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
-
-        // Αποστολή μέσω AJAX
-        fetch(form.action, {
-            method: "POST",
-            headers: { 
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            },
-            body: JSON.stringify(data)
-        })
-        .then(response => {
-            if (response.ok) {
-                formContent.style.display = 'none';
-                successMsg.style.display = 'block';
-            } else {
-                return response.json().then(err => { throw err; });
-            }
-        })
-        .catch(error => {
-            console.error("Error:", error);
-            alert("Υπήρξε κάποιο πρόβλημα. Βεβαιωθείτε ότι η σελίδα τρέχει από διακομιστή (π.χ. GitHub Pages) και όχι τοπικά.");
-            btn.innerHTML = "Αποστολή";
-            btn.disabled = false;
-        });
-    });
-</script>
-
 </body>
 </html>
-
-
